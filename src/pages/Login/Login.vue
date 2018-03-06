@@ -37,6 +37,8 @@
                 api.Login(data)
                     .then(res => {
                         console.log(res)
+                        this.setUserInfo(res.data)
+                        this.$router.replace('/home')
                     })
             }
         }

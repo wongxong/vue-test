@@ -11,10 +11,10 @@ const router = new Router({
     linkExactActiveClass: 'active',
     routes: [
         {
-            path: '/',
+            path: '/home',
             name: 'home',
             component: Home,
-            redirect: '/user/login'
+            alias: '/'
         },
         {
             path: '/user/login',
@@ -24,5 +24,13 @@ const router = new Router({
     ]
 })
 
+router.beforeEach((to, from, next) => {
+    let loginStatus = localStorage.getItem('loginStatus')
+    if(!loginStatus && to.path.indexOf('/user/') < 0){
+        next('/user/login');
+        return
+    }
+    next()
+})
 
 export default router

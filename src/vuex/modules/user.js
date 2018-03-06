@@ -15,6 +15,7 @@ const actions = {
      * 用户登录
      */
     setUserInfo({commit}, res) {
+        console.log(res, 'ttttttttttttt')
         localStorage.setItem('userInfo', JSON.stringify(res))
         localStorage.setItem('loginStatus', true)
         commit(types.SET_USER_INFO, res)

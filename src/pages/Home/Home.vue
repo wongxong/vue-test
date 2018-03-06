@@ -7,7 +7,13 @@
 
 <script>
     export default {
-        name: "home"
+        name: "home",
+        data() {
+            return {}
+        },
+        created() {
+            console.log(1211)
+        }
     }
 </script>
 

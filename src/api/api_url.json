@@ -1,0 +1,5 @@
+{
+    "login": "/api/users/userLogin",
+    "regist": "/api/users/userRegist",
+    "registVerifiCode": "/api/users/registVerifiCode"
+}
